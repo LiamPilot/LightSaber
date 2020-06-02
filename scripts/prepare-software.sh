@@ -65,7 +65,7 @@ cmake -DLLVM_ENABLE_PROJECTS=clang -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_SHARED_LIBS=ON -DCLANG_INCLUDE_DOCS=OFF -DCLANG_INCLUDE_TESTS=OFF \
     -DCLANG_INSTALL_SCANBUILD=OFF -DCLANG_INSTALL_SCANVIEW=OFF -DCLANG_PLUGIN_SUPPORT=OFF \
     -DLLVM_TARGETS_TO_BUILD=X86 -G "Unix Makefiles" ../llvm
-make
+make -j$(nprocs)
 sudo make install
 echo "export LLVM_HOME=$(pwd)" >> $HOME/.profile
 echo "export PATH=$LLVM_HOME/bin:$PATH" >> $HOME/.profile

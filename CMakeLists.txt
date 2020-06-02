@@ -6,6 +6,7 @@ project(LightSaber)
 
 include_directories(src)
 include_directories(test)
+include_directories(/usr/include)
 
 add_subdirectory(src)
 add_subdirectory(test)
